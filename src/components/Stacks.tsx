@@ -15,14 +15,14 @@ const stacks = [
   {
     title: "React",
     content: (
-      <div className="bg-white dark:bg-gray-900 rounded-lg p-4 shadow-md">
+      <div className="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-md">
         <div className="flex items-center space-x-2 mb-2">
           <SiReact className="text-blue-500 dark:text-blue-400 text-3xl" />
           <h4 className="text-lg font-semibold">React</h4>
         </div>
         <p className="text-neutral-700 dark:text-neutral-300">
           A JavaScript library for building user interfaces with reusable
-          components. React's declarative syntax and component-based
+          components. React&apos;s declarative syntax and component-based
           architecture make it easy to create interactive UIs.
         </p>
       </div>
@@ -31,7 +31,7 @@ const stacks = [
   {
     title: "Next.js",
     content: (
-      <div className="bg-white dark:bg-gray-900 rounded-lg p-4 shadow-md">
+      <div className="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-md">
         <div className="flex items-center space-x-2 mb-2">
           <SiNextdotjs className="text-black dark:text-white text-3xl" />
           <h4 className="text-lg font-semibold">Next.js</h4>
@@ -47,7 +47,7 @@ const stacks = [
   {
     title: "Tailwind CSS",
     content: (
-      <div className="bg-white dark:bg-gray-900 rounded-lg p-4 shadow-md">
+      <div className="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-md">
         <div className="flex items-center space-x-2 mb-2">
           <SiTailwindcss className="text-teal-500 dark:text-teal-400 text-3xl" />
           <h4 className="text-lg font-semibold">Tailwind CSS</h4>
@@ -63,15 +63,15 @@ const stacks = [
   {
     title: "MongoDB",
     content: (
-      <div className="bg-white dark:bg-gray-900 rounded-lg p-4 shadow-md">
+      <div className="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-md">
         <div className="flex items-center space-x-2 mb-2">
           <SiMongodb className="text-green-500 dark:text-green-400 text-3xl" />
           <h4 className="text-lg font-semibold">MongoDB</h4>
         </div>
         <p className="text-neutral-700 dark:text-neutral-300">
           A document-based, distributed database built for modern application
-          developers. MongoDB's flexible schema and powerful query language make
-          it ideal for handling complex data structures.
+          developers. MongoDB&apos;s flexible schema and powerful query language
+          make it ideal for handling complex data structures.
         </p>
       </div>
     ),
@@ -79,13 +79,13 @@ const stacks = [
   {
     title: "Node.js",
     content: (
-      <div className="bg-white dark:bg-gray-900 rounded-lg p-4 shadow-md">
+      <div className="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-md">
         <div className="flex items-center space-x-2 mb-2">
           <SiNodedotjs className="text-green-600 dark:text-green-500 text-3xl" />
           <h4 className="text-lg font-semibold">Node.js</h4>
         </div>
         <p className="text-neutral-700 dark:text-neutral-300">
-          A JavaScript runtime built on Chrome's V8 JavaScript engine for
+          A JavaScript runtime built on Chrome&apos;s V8 JavaScript engine for
           server-side development. Node.js enables building scalable network
           applications and provides a vast ecosystem of packages through npm.
         </p>
@@ -95,7 +95,7 @@ const stacks = [
   {
     title: "Nest.js",
     content: (
-      <div className="bg-white dark:bg-gray-900 rounded-lg p-4 shadow-md">
+      <div className="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-md">
         <div className="flex items-center space-x-2 mb-2">
           <SiNestjs className="text-red-500 dark:text-red-400 text-3xl" />
           <h4 className="text-lg font-semibold">Nest.js</h4>
@@ -112,7 +112,7 @@ const stacks = [
 
 export default function StacksTimeline() {
   return (
-    <section id="stacks" className="bg-gray-50 dark:bg-gray-900">
+    <section id="stacks" className="bg-gray-50 dark:bg-gray-950">
       <Timeline data={stacks} />
     </section>
   );
