@@ -50,8 +50,8 @@ export default function Hero() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 0.5 }}
         >
-          We're a collective of passionate developers creating innovative web
-          and mobile solutions for the modern digital landscape.
+          We&apos;re a collective of passionate developers creating innovative
+          web and mobile solutions for the modern digital landscape.
         </motion.p>
 
         <motion.div
