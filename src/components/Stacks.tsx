@@ -1,7 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Card, CardContent } from "./ui/card";
+import React from "react";
 import {
   SiReact,
   SiNextdotjs,
@@ -10,55 +9,111 @@ import {
   SiNodedotjs,
   SiNestjs,
 } from "react-icons/si";
+import { Timeline } from "./ui/timeline";
 
 const stacks = [
-  { name: "React", icon: SiReact, color: "text-blue-500 dark:text-blue-400" },
-  { name: "Next.js", icon: SiNextdotjs, color: "text-black dark:text-white" },
   {
-    name: "Tailwind CSS",
-    icon: SiTailwindcss,
-    color: "text-teal-500 dark:text-teal-400",
+    title: "React",
+    content: (
+      <div className="bg-white dark:bg-gray-900 rounded-lg p-4 shadow-md">
+        <div className="flex items-center space-x-2 mb-2">
+          <SiReact className="text-blue-500 dark:text-blue-400 text-3xl" />
+          <h4 className="text-lg font-semibold">React</h4>
+        </div>
+        <p className="text-neutral-700 dark:text-neutral-300">
+          A JavaScript library for building user interfaces with reusable
+          components. React's declarative syntax and component-based
+          architecture make it easy to create interactive UIs.
+        </p>
+      </div>
+    ),
   },
   {
-    name: "MongoDB",
-    icon: SiMongodb,
-    color: "text-green-500 dark:text-green-400",
+    title: "Next.js",
+    content: (
+      <div className="bg-white dark:bg-gray-900 rounded-lg p-4 shadow-md">
+        <div className="flex items-center space-x-2 mb-2">
+          <SiNextdotjs className="text-black dark:text-white text-3xl" />
+          <h4 className="text-lg font-semibold">Next.js</h4>
+        </div>
+        <p className="text-neutral-700 dark:text-neutral-300">
+          The React framework for production, offering server-side rendering and
+          static site generation. Next.js provides a powerful toolset for
+          building scalable and performant web applications.
+        </p>
+      </div>
+    ),
   },
   {
-    name: "Node.js",
-    icon: SiNodedotjs,
-    color: "text-green-600 dark:text-green-500",
+    title: "Tailwind CSS",
+    content: (
+      <div className="bg-white dark:bg-gray-900 rounded-lg p-4 shadow-md">
+        <div className="flex items-center space-x-2 mb-2">
+          <SiTailwindcss className="text-teal-500 dark:text-teal-400 text-3xl" />
+          <h4 className="text-lg font-semibold">Tailwind CSS</h4>
+        </div>
+        <p className="text-neutral-700 dark:text-neutral-300">
+          A utility-first CSS framework for rapidly building custom user
+          interfaces. Tailwind CSS allows for quick prototyping and consistent
+          design implementation across projects.
+        </p>
+      </div>
+    ),
   },
-  { name: "Nest.js", icon: SiNestjs, color: "text-red-500 dark:text-red-400" },
+  {
+    title: "MongoDB",
+    content: (
+      <div className="bg-white dark:bg-gray-900 rounded-lg p-4 shadow-md">
+        <div className="flex items-center space-x-2 mb-2">
+          <SiMongodb className="text-green-500 dark:text-green-400 text-3xl" />
+          <h4 className="text-lg font-semibold">MongoDB</h4>
+        </div>
+        <p className="text-neutral-700 dark:text-neutral-300">
+          A document-based, distributed database built for modern application
+          developers. MongoDB's flexible schema and powerful query language make
+          it ideal for handling complex data structures.
+        </p>
+      </div>
+    ),
+  },
+  {
+    title: "Node.js",
+    content: (
+      <div className="bg-white dark:bg-gray-900 rounded-lg p-4 shadow-md">
+        <div className="flex items-center space-x-2 mb-2">
+          <SiNodedotjs className="text-green-600 dark:text-green-500 text-3xl" />
+          <h4 className="text-lg font-semibold">Node.js</h4>
+        </div>
+        <p className="text-neutral-700 dark:text-neutral-300">
+          A JavaScript runtime built on Chrome's V8 JavaScript engine for
+          server-side development. Node.js enables building scalable network
+          applications and provides a vast ecosystem of packages through npm.
+        </p>
+      </div>
+    ),
+  },
+  {
+    title: "Nest.js",
+    content: (
+      <div className="bg-white dark:bg-gray-900 rounded-lg p-4 shadow-md">
+        <div className="flex items-center space-x-2 mb-2">
+          <SiNestjs className="text-red-500 dark:text-red-400 text-3xl" />
+          <h4 className="text-lg font-semibold">Nest.js</h4>
+        </div>
+        <p className="text-neutral-700 dark:text-neutral-300">
+          A progressive Node.js framework for building efficient and scalable
+          server-side applications. Nest.js leverages TypeScript and combines
+          elements of OOP, FP, and FRP for robust application architectures.
+        </p>
+      </div>
+    ),
+  },
 ];
 
-export default function Stacks() {
+export default function StacksTimeline() {
   return (
-    <section id="stacks" className="py-20 bg-gray-50 dark:bg-gray-950">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-900 dark:text-gray-100">
-          Our Tech Stack
-        </h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-          {stacks.map((stack, index) => (
-            <motion.div
-              key={stack.name}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
-            >
-              <Card className="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-300">
-                <CardContent className="flex flex-col items-center justify-center p-6">
-                  <stack.icon className={`text-4xl ${stack.color} mb-2`} />
-                  <h3 className="font-semibold text-gray-900 dark:text-gray-100">
-                    {stack.name}
-                  </h3>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
-        </div>
-      </div>
+    <section id="stacks" className="bg-gray-50 dark:bg-gray-900">
+      <Timeline data={stacks} />
     </section>
   );
 }
